@@ -97,7 +97,6 @@ namespace Lab1Steganografia
                         Console.Write("Расшифрованное сообщение: ");
                         var str = Encoding.UTF8.GetString(decryptedStr, 0, decryptedStr.Length);
                         Console.WriteLine(str);  
-
                     }
                     //Console.WriteLine("Получение сообщения");
                     //Console.WriteLine($"message:{programOptions.message}");
