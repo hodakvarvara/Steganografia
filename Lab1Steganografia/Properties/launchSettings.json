@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Lab1Steganografia": {
+      "commandName": "Project",
+      "commandLineArgs": "-start get -s stego.txt "
+    }
+  }
+}
