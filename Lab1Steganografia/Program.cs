@@ -79,10 +79,16 @@ namespace Lab1Steganografia
                     if (programOptions.stego != null)
                     {
                         stegoStr = function.inputStego(programOptions.stego);
+                        if(stegoStr.Length == 0)
+                        {
+                            Console.WriteLine("Ошибка! Стегоконтейнер пуст. Запишите в файл данные, либо воспользуйтесь консольным вводом.");
+                            return;
+                        }
+                        
                     }
                     else
                     {
-                        Console.WriteLine("Введите зашифрованное сообщение: ");
+                        Console.WriteLine("Введите стегоконтейнер, содержащий зашифрованное сообщение: ");
                         stegoStr = Console.ReadLine();
                     } 
 

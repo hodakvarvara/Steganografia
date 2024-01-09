@@ -9,7 +9,9 @@ namespace Lab1Steganografia.Options
 {
     public class StartOptions
     {
+        
         [OptionOrder(0), Name("put"), Description("opisanie put")]
-        public string? put { get; set; } // путь к файлу, содержащему сообщение
+        public string? put { get; set; }
+
     }
 }

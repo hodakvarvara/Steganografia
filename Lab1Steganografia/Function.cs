@@ -27,19 +27,19 @@ namespace Lab1Steganografia
                     bitMessage.Add(bit[i]);
                 }
                 bitMessage.Add(true);
-                // Console.WriteLine("Начальное сообщение");
-                foreach (var b in bitMessage) 
-                { 
-                    Console.Write(b ? "1" : "0"); 
-                    Console.Write(" "); 
-                }
-                Console.WriteLine();
-                foreach (var b in bytes) 
-                {
-                    Console.Write(b); 
-                    Console.Write(" "); 
-                }
-                Console.WriteLine();
+                //// Console.WriteLine("Начальное сообщение");
+                //foreach (var b in bitMessage) 
+                //{ 
+                //    Console.Write(b ? "1" : "0"); 
+                //    Console.Write(" "); 
+                //}
+                //Console.WriteLine();
+                //foreach (var b in bytes) 
+                //{
+                //    Console.Write(b); 
+                //    Console.Write(" "); 
+                //}
+                //Console.WriteLine();
 
                 //string text = ConvertBitArrayToText(k);
 
@@ -62,14 +62,18 @@ namespace Lab1Steganografia
             // чтение из файла  по символьно
             try
             {
-                using (StreamReader reader = new StreamReader(path))
+                if (new FileInfo(path).Length != 0)
                 {
-                    int character;
-                    while ((character = reader.Read()) != -1)
+                    using (StreamReader reader = new StreamReader(path))
                     {
-                        stegoMessage += (char)character;
+                        int character;
+                        while ((character = reader.Read()) != -1)
+                        {
+                            stegoMessage += (char)character;
+                        }
                     }
-                }
+
+                }   
             }
             catch (Exception ex)
             {
@@ -243,8 +247,8 @@ namespace Lab1Steganografia
                 for (int i = 0; i < count; i++)
                 {
                     decryptedMessage[i] = decryptedMessageList[i];
-                    Console.Write(decryptedMessageList[i] ? "1" : "0");
-                    Console.Write(" ");
+                    //Console.Write(decryptedMessageList[i] ? "1" : "0");
+                    //Console.Write(" ");
                 }
                 
                 // Переводим двоичный код в текст
